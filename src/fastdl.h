@@ -17,5 +17,6 @@ struct fastdl_Handle {
 int fastdl_open(struct fastdl_Handle* handle, const char* path, int flag);
 int fastdl_sym(struct fastdl_Handle* handle, const char* symbolName, void** symbolPointer);
 int fastdl_close(struct fastdl_Handle* handle);
+char* fastdl_error();
 
 #endif

@@ -39,3 +39,7 @@ int fastdl_close(struct fastdl_Handle* handle) {
     }
     return dlclose(handle->dlHandle);
 }
+
+char* fastdl_error() {
+    return dlerror();
+}
