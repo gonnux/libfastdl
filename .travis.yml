@@ -4,6 +4,9 @@ language: c
 compiler:
   - gcc
 before_script:
+  - cmake -version
+  - make --version 
+  - gcc --version
   - mkdir build
   - cd build
   - cmake ..
