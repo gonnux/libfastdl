@@ -3,6 +3,8 @@ sudo: required
 language: c
 compiler:
   - gcc
+install:
+  - sudo apt-get install uthash-dev
 before_script:
   - cmake -version
   - make --version 
