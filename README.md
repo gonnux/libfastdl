@@ -17,7 +17,7 @@ int main() {
 }
 ```
 ## Performance
-<img src="https://github.com/gonapps/libfastdl-c/blob/master/test-result.png"></img>
+<img src="https://github.com/vinbero-server/libfastdl/blob/master/test-result.png"></img>
 ## Dependencies
 libdl, uthash
 ## License
