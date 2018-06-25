@@ -7,7 +7,7 @@ if(CMAKE_VERSION VERSION_LESS "3.1")
     set (CMAKE_C_FLAGS "-std=gnu11 ${CMAKE_C_FLAGS}")
   endif()
 else()
-    set(CMAKE_C_STANDARD 11)
+  set(CMAKE_C_STANDARD 11)
 endif()
 
 add_subdirectory(src)

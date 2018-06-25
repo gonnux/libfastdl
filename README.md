@@ -1,4 +1,4 @@
-# libfastdl [![Build Status](https://travis-ci.org/vinbero-server/libfastdl.svg?branch=master)](https://travis-ci.org/vinbero-server/libfastdl)
+# libfastdl [![Build Status](https://travis-ci.org/vinbero/libfastdl.svg?branch=master)](https://travis-ci.org/vinbero/libfastdl)
 ## About
 A libdl wrapper library that hashes function pointers to a hash table
 ## Usage
@@ -17,7 +17,7 @@ int main() {
 }
 ```
 ## Performance
-<img src="https://github.com/vinbero-server/libfastdl/blob/master/test-result.png"></img>
+<img src="https://github.com/vinbero/libfastdl/blob/master/test-result.png"></img>
 ## Dependencies
 libdl, uthash
 ## License
