@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(libfastdl)
+project(libfastdl C)
 enable_testing()
-set(CMAKE_BUILD_TYPE debug)
 add_subdirectory(src)
 add_subdirectory(test)
