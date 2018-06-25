@@ -4,7 +4,11 @@ language: c
 compiler:
   - gcc
 install:
-  - sudo apt-get install libcmocka-dev
+  - git clone git://git.cryptomilk.org/projects/cmocka.git 
+  - mkdir build
+  - cmake ..
+  - make
+  - sudo make install
   - sudo apt-get install uthash-dev
 before_script:
   - cmake -version
