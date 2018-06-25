@@ -1,4 +1,4 @@
-# libfastdl-c
+# libfastdl-c [![Build Status](https://travis-ci.org/vinbero-server/libfastdl.svg?branch=master)](https://travis-ci.org/vinbero-server/libfastdl)
 ## About
 A libdl wrapper library that hashes function pointers to a hash table
 ## Usage
