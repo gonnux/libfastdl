@@ -9,8 +9,7 @@ install:
   - sudo apt-get install -y uthash-dev
   - cd cmocka
   - mkdir build
-  - cmake ..
-  - make && sudo make install
+  - cmake .. && make && sudo make install
 before_script:
   - cmake -version
   - make --version 
