@@ -10,8 +10,7 @@ install:
   - cd cmocka
   - mkdir build
   - cmake ..
-  - make
-  - sudo make install
+  - make && sudo make install
 before_script:
   - cmake -version
   - make --version 
