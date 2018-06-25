@@ -3,9 +3,10 @@ sudo: required
 language: c
 compiler:
   - gcc
-install:
-  - sudo apt-get install uthash-dev
+before_install:
   - git clone git://git.cryptomilk.org/projects/cmocka.git 
+install:
+  - sudo apt-get install -y uthash-dev
   - cd cmocka
   - mkdir build
   - cmake ..
