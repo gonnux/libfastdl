@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 2.8)
 project(libfastdl C)
-enable_testing()
+set(CMAKE_BUILD_TYPE RelWithDebInfo)
+
+set(libfastdl_version "0.1.0")
+set(libfastdl_soversion "0.1")
 
 if(CMAKE_VERSION VERSION_LESS "3.1")
   if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
@@ -11,4 +14,5 @@ else()
 endif()
 
 add_subdirectory(src)
+enable_testing()
 add_subdirectory(test)
