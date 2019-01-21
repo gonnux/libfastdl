@@ -34,7 +34,7 @@ do { \
     symbol->pointer = *(symbolPointer); \
     HASH_ADD(hashHandle, (handle)->cache, name, symbolNameLength, symbol); \
     *(ret) = 0; \
-} while(0);
+} while(0)
 
 int fastdl_close(struct fastdl_Handle* handle);
 char* fastdl_error();
