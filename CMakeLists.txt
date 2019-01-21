@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 2.8)
 project(libfastdl C)
 set(CMAKE_BUILD_TYPE RelWithDebInfo)
 
-set(fastdl_version "0.1.1")
-set(fastdl_soversion "0.1")
+set(fastdl_version "0.2.0")
+set(fastdl_soversion "0.2")
 
 if(CMAKE_VERSION VERSION_LESS "3.1")
   if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
