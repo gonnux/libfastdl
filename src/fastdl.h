@@ -25,10 +25,13 @@ do { \
     if(symbol != NULL) { \
         *(symbolPointer) = symbol->pointer; \
         *(ret) = 1; \
+        break; \
     } \
     *(symbolPointer) = dlsym((handle)->dlHandle, (symbolName)); \
-    if(*(symbolPointer) == NULL) \
+    if(*(symbolPointer) == NULL) { \
         *(ret) = -1; \
+        break; \
+    } \
     symbol = calloc(1, sizeof(struct fastdl_Symbol)); \
     symbol->name = (symbolName); \
     symbol->pointer = *(symbolPointer); \
