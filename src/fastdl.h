@@ -1,17 +1,16 @@
 #ifndef _FASTDL_H
 #define _FASTDL_H
 
-#include <uthash.h>
+#include <libgenc/genc_Map.h>
 
 struct fastdl_Symbol {
-    const char* name;
     void* pointer;
-    UT_hash_handle hashHandle;
+    GENC_MAP_ELEM(struct fastdl_Symbol);
 };
 
 struct fastdl_Handle {
     void* dlHandle;
-    struct fastdl_Symbol* cache;
+    GENC_MAP(struct fastdl_Symbol);
 };
 
 int fastdl_open(struct fastdl_Handle* handle, const char* path, int flag);
@@ -20,22 +19,25 @@ int fastdl_sym(struct fastdl_Handle* handle, const char* symbolName, void** symb
 #define FASTDL_SYM(handle, symbolName, symbolPointer, ret) \
 do { \
     struct fastdl_Symbol* symbol = NULL; \
+    struct fastdl_Symbol* oldSymbol = NULL; \
     size_t symbolNameLength = strlen(symbolName); \
-    HASH_FIND(hashHandle, (handle)->cache, &(symbolName), symbolNameLength, symbol); \
+    GENC_MAP_GET(handle, symbolName, symbolNameLength, &symbol); \
     if(symbol != NULL) { \
         *(symbolPointer) = symbol->pointer; \
         *(ret) = 1; \
         break; \
     } \
-    *(symbolPointer) = dlsym((handle)->dlHandle, (symbolName)); \
+    *(symbolPointer) = dlsym((handle)->dlHandle, symbolName); \
     if(*(symbolPointer) == NULL) { \
         *(ret) = -1; \
         break; \
     } \
-    symbol = calloc(1, sizeof(struct fastdl_Symbol)); \
-    symbol->name = (symbolName); \
+    symbol = malloc(sizeof(struct fastdl_Symbol)); \
+    GENC_MAP_ELEM_INIT(symbol); \
+    GENC_MAP_ELEM_KEY(symbol) = symbolName; \
+    GENC_MAP_ELEM_KEY_LENGTH(symbol) = symbolNameLength; \
     symbol->pointer = *(symbolPointer); \
-    HASH_ADD(hashHandle, (handle)->cache, name, symbolNameLength, symbol); \
+    GENC_MAP_SET(handle, symbol, &oldSymbol); \
     *(ret) = 0; \
 } while(0)
 

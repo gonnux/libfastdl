@@ -19,6 +19,6 @@ int main() {
 ## Performance
 <img src="https://github.com/vinbero/libfastdl/blob/master/test-result.png"></img>
 ## Dependencies
-libdl, uthash
+libdl, libgenc
 ## License
 Mozilla Public License 2.0
