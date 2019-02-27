@@ -1,4 +1,5 @@
-# libfastdl [![Build Status](https://travis-ci.org/vinbero/libfastdl.svg?branch=master)](https://travis-ci.org/vinbero/libfastdl)
+# libfastdl
+[![Build Status](https://travis-ci.org/vinbero/libfastdl.svg?branch=master)](https://travis-ci.org/vinbero/libfastdl)[![Documentation](https://codedocs.xyz/gonapps-org/libfastdl.svg)](https://codedocs.xyz/gonapps-org/libfastdl/)
 ## About
 A libdl wrapper library that hashes function pointers to a hash table
 ## Usage
