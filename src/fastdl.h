@@ -3,10 +3,30 @@
 
 #include <libgenc/genc_Map.h>
 
+/**
+ * @file fastdl.h
+ * @author Byeonggon Lee
+ * @brief libfastdl header file.
+ */
+
+/**
+ * @brief
+ * Struct which contains a function pointer.
+ * @details
+ * It is used as a map entry of fastdl_Handle.
+ */
+
 struct fastdl_Symbol {
     void* pointer;
     GENC_MAP_ELEM(struct fastdl_Symbol);
 };
+
+/**
+ * @brief
+ * Struct which holds libdl handle and a map of fastdl_Symbol
+ * @details
+ * Struct which holds libdl handle and a map of fastdl_Symbol
+ */
 
 struct fastdl_Handle {
     void* dlHandle;
