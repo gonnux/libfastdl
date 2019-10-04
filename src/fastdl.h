@@ -2,6 +2,7 @@
 #define _FASTDL_H
 
 #include <libgenc/genc_Map.h>
+#include <stdint.h>
 
 struct fastdl_Symbol {
     void* pointer;
@@ -34,7 +35,7 @@ do { \
     } \
     symbol = malloc(sizeof(struct fastdl_Symbol)); \
     GENC_MAP_ELEM_INIT(symbol); \
-    GENC_MAP_ELEM_KEY(symbol) = symbolName; \
+    GENC_MAP_ELEM_KEY(symbol) = (uint8_t*)symbolName; \
     GENC_MAP_ELEM_KEY_LENGTH(symbol) = symbolNameLength; \
     symbol->pointer = *(symbolPointer); \
     GENC_MAP_SET(handle, symbol, &oldSymbol); \
