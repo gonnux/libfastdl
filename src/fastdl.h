@@ -35,7 +35,7 @@ do { \
     } \
     symbol = malloc(sizeof(struct fastdl_Symbol)); \
     GENC_MAP_ELEM_INIT(symbol); \
-    GENC_MAP_ELEM_KEY(symbol) = (uint8_t*)symbolName; \
+    GENC_MAP_ELEM_KEY(symbol) = (const uint8_t*)symbolName; \
     GENC_MAP_ELEM_KEY_LENGTH(symbol) = symbolNameLength; \
     symbol->pointer = *(symbolPointer); \
     GENC_MAP_SET(handle, symbol, &oldSymbol); \
