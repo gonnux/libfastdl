@@ -3,6 +3,10 @@ sudo: required
 language: c
 compiler:
   - gcc
+branches:
+  only:
+    - master
+    - dev
 before_install:
   - pwd
   - git clone -b $TRAVIS_BRANCH --recurse-submodules -j8 https://github.com/gonapps-org/libgenc
